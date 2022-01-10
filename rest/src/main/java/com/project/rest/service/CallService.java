@@ -20,14 +20,7 @@ public class CallService {
 						 "Friday","Saturday","Sunday"};
 	
 	CallService() {
-		for(int i=0;i<7;i++) {
-			callDurationByDay[i]=0;
-			callStartAtByDay[i]=0;
-		}
-		for(int i=0;i<24;i++) {
-			callDurationByHour[i] = 0;
-			callStartAtByHour[i] = 0;
-		}
+		clearPrevious();
 	}
 	
 	String Hour_(int hours) {
@@ -41,7 +34,7 @@ public class CallService {
 	}
 	
 	public String getDetails(List<Call> calls) throws ParseException {
-		
+		clearPrevious();
 		for(Call call:calls) {
 			String sDate=call.Start_time;
 	        Date date=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse(sDate);
@@ -74,6 +67,17 @@ public class CallService {
 //				"Hour of the day when the call volume is highest is 6-7 AM";
 //		return details;
 		
+	}
+	
+	void clearPrevious(){
+		for(int i=0;i<7;i++) {
+			callDurationByDay[i]=0;
+			callStartAtByDay[i]=0;
+		}
+		for(int i=0;i<24;i++) {
+			callDurationByHour[i] = 0;
+			callStartAtByHour[i] = 0;
+		}
 	}
 	
 	String findMaxDay(int dayCount[]) {
