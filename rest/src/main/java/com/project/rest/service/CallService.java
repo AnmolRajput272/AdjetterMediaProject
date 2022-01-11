@@ -26,6 +26,7 @@ public class CallService {
 	String Hour_(int hours) {
 		if(hours>12) return ((hours%12)+" PM");
 		if(hours==0) return "12 AM";
+		if(hours==12) return "12 PM";
 		return hours+" AM ";
 	}
 	
