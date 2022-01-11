@@ -64,10 +64,6 @@ public class CallService {
 				          findMinDay(callStartAtByDay) + "\n";
 		
 		return maxDetails + "\n" + minDetails;
-//		String details = " " +
-//				"Hour of the day when the call volume is highest is 6-7 AM";
-//		return details;
-		
 	}
 	
 	void clearPrevious(){
