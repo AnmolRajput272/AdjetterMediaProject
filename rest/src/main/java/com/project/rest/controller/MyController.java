@@ -21,7 +21,7 @@ public class MyController {
 	
 	@GetMapping("/hello")
 	public String hello() {
-		return "hello";
+		return "Hello Welcome To Customer Care Analytics System";
 	}
 	
 	@GetMapping("/getData")
